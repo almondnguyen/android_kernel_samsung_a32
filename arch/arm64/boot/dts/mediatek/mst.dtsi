@@ -1,0 +1,61 @@
+/* Copyright (c) 2020, Samsung Electronics Corporation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+&pio {
+	mst_pwr_en: sec-mst,mst-pwr-gpio {
+		pins_cmd_dat {
+			pinmux = <MTK_PINMUX(SEC_GPIO_NUM(AP,pio,150), 0)>;
+			output-low;
+			bias-pull-down;
+		};
+	};
+};
+
+&pio {
+	mst_en: sec-mst,mst-en-gpio {
+		pins_cmd_dat {
+			pinmux = <MTK_PINMUX(SEC_GPIO_NUM(AP,pio,21), 0)>;
+			output-low;
+			bias-pull-down;
+		};
+	};
+};
+
+&pio {
+	mst_data: sec-mst,mst-data-gpio {
+		pins_cmd_dat {
+			pinmux = <MTK_PINMUX(SEC_GPIO_NUM(AP,pio,23), 0)>;
+			output-low;
+			bias-pull-down;
+		};
+	};
+};
+
+&smd {
+	sec-mst{
+		compatible = "sec-mst";
+		sec-mst,mst-pwr-gpio = <SEC_GPIO_REF(AP,pio,150) 0>;
+		sec-mst,mst-en-gpio = <SEC_GPIO_REF(AP,pio,21) 0>;
+		sec-mst,mst-data-gpio = <SEC_GPIO_REF(AP,pio,23) 0>;
+
+		pinctrl-names = "default";
+		pinctrl-0 = <&mst_pwr_en &mst_en &mst_data>;
+	};
+};
+
+/* /home/dpi/qb5_8815/workspace/P4_1716/android/kernel/kmodule/mst/mst_mtk.a32.dtsi */
+
+&smd {
+	sec-mst {
+		sec-mst,mst-support-gpio = <SEC_GPIO_REF(AP,pio,78) 0>;
+	};
+};

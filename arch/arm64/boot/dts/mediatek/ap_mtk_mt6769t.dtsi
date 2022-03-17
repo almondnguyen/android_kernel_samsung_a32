@@ -1,0 +1,3 @@
+#include <dt-bindings/clock/mt6768-clk.h>
+#include "../../mediatek/k69v1_64_titan_marmot.dts"
+

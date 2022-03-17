@@ -1,0 +1,17 @@
+obj-y += accelerometer.o
+obj-y += gyroscope.o
+obj-y += gyroscope_uncal.o
+obj-y += magnetometer.o
+obj-y += magnetometer_uncal.o
+obj-y += flip_cover_detector.o
+obj-y += light.o
+obj-y += light_cct.o
+obj-y += light_autobrightness.o
+obj-y += pressure.o
+obj-y += scontext.o
+obj-y += step.o
+obj-y += proximity.o
+obj-y += proximity_raw.o
+obj-y += proximity_calibration.o
+obj-y += motion.o
+obj-y += super.o

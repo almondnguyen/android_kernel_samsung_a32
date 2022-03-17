@@ -1,0 +1,8 @@
+# ignore output
+out/
+
+# ignore copied Image because build script
+arch/arm64/boot/Image
+
+# ignore prebuilt toolchain
+toolchain/
